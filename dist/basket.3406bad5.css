@@ -1,0 +1,39 @@
+body {
+  font-family: DM Sans;
+  font-style: normal;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  outline: none;
+  text-decoration: none;
+}
+
+p {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+h1, h2, h3 {
+  margin: 0;
+}
+
+input {
+  outline: none;
+  margin: 0;
+}
+
+button {
+  outline: none;
+}
+/*# sourceMappingURL=basket.3406bad5.css.map */
