@@ -1,0 +1,125 @@
+.info {
+    margin-right: 40px;
+}
+
+.category {
+    margin-bottom: 170px;
+}
+
+.category__list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    overflow: scroll;
+    overflow-x: hidden;
+    height: 356px;
+}
+
+.category__list::-webkit-scrollbar {
+    display: none;
+}
+
+.category__item {}
+
+.category__span {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.36px;
+    color: #11111199;
+}
+
+.active {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: -0.36px;
+    text-transform: uppercase;
+    color: #4f2ee8;
+}
+
+.support {
+    border-radius: 16px;
+    background: radial-gradient(189.32% 190.93% at 59.76% -23.42%,
+            #4f2ee8 18.03%,
+            #fff 100%);
+    box-shadow: 0px 10px 10px 0px rgba(245, 245, 247, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+    width: 356px;
+    padding-left: 40px;
+    padding-top: 29px;
+    padding-bottom: 86px;
+    position: relative;
+}
+
+.support__title {
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: -0.96px;
+    font-size: 24px;
+    color: #ffffff;
+    margin-right: 12px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 45px;
+}
+
+.support__emblem-icon {
+    width: 20px;
+    height: 32px;
+    fill: #ffffff;
+}
+
+.support__list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.support__item {
+    display: flex;
+    align-items: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.support__span {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: -0.56px;
+    color: #ffffff;
+    margin-right: 11px;
+}
+
+.support__link {}
+
+.support__img {
+    height: 32px;
+    flex-shrink: 0;
+}
+
+.support__scroll-button {
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    border: none;
+    background-color: #FFFFFF;
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translate(-50%, 0%) rotate(180deg);
+    transition: background-color 500ms linear 250ms;
+}
+
+.support__scroll-icon {
+    fill: #4F2EE8;
+    width: 16px;
+    height: 10px;
+    flex-shrink: 0;
+    transition: fill 500ms linear 250ms;
+}

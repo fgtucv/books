@@ -1,0 +1,22 @@
+// * {
+//     transition: all 500ms linear 250ms;
+// }
+
+.magazine__button:hover {
+    background-color: #4F2EE8;
+    color: #fff;
+}
+
+.magazine__button:focus {
+    background-color: #4F2EE8;
+    color: #fff;
+    box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.15);
+}
+
+.support__scroll-button:hover {
+    background-color: #4F2EE8;
+}
+
+.support__scroll-icon:hover {
+    fill: #fff;
+}
