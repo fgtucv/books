@@ -75,12 +75,12 @@ button {
   box-shadow: 0 4px 18px #00000026;
 }
 
-.support__scroll-button:hover {
-  background-color: #4f2ee8;
+.category__span:hover, .category__span:focus {
+  color: #4f2ee8;
 }
 
-.support__scroll-icon:hover {
-  fill: #fff;
+.magazine__img:hover, .magazine__img:focus {
+  transform: scale(1.05);
 }
 
 .header {
@@ -201,6 +201,7 @@ button {
   font-size: 18px;
   font-weight: 400;
   line-height: 24px;
+  transition: color .5s linear .25s;
 }
 
 .active {
@@ -254,7 +255,7 @@ button {
   display: flex;
 }
 
-.hidden {
+.no-showe {
   display: none;
 }
 
@@ -269,7 +270,8 @@ button {
 
 .support__img {
   flex-shrink: 0;
-  height: 32px;
+  max-width: 130px;
+  max-height: 32px;
 }
 
 .support__scroll-button {
@@ -279,7 +281,7 @@ button {
   flex-shrink: 0;
   width: 38px;
   height: 38px;
-  transition: background-color .5s linear .25s;
+  transition: background-color .5s linear .25s, transform .3s linear;
   position: absolute;
   bottom: 24px;
   left: 50%;
@@ -308,7 +310,7 @@ button {
 }
 
 .magazine {
-  flex-direction: column;
+  flex-wrap: wrap;
   gap: 40px;
   display: flex;
 }
@@ -334,12 +336,14 @@ button {
   width: 180px;
   height: 256px;
   margin-bottom: 14px;
+  transition: transform .5s linear .25s;
 }
 
 .magazine__book-name {
   color: #111;
   letter-spacing: -.64px;
   text-transform: uppercase;
+  max-width: 180px;
   margin-bottom: 4px;
   font-size: 16px;
   font-weight: 700;
@@ -349,6 +353,7 @@ button {
 .magazine__book-author {
   color: #b4afaf;
   letter-spacing: -.48px;
+  max-width: 180px;
   font-size: 12px;
   font-style: italic;
   font-weight: 400;

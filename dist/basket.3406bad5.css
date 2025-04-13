@@ -75,12 +75,12 @@ button {
   box-shadow: 0 4px 18px #00000026;
 }
 
-.support__scroll-button:hover {
-  background-color: #4f2ee8;
+.category__span:hover, .category__span:focus {
+  color: #4f2ee8;
 }
 
-.support__scroll-icon:hover {
-  fill: #fff;
+.magazine__img:hover, .magazine__img:focus {
+  transform: scale(1.05);
 }
 
 .header {

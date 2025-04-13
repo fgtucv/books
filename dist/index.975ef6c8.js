@@ -597,8 +597,197 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 
 },{}],"8lqZg":[function(require,module,exports,__globalThis) {
 var _appJs = require("./index-JS/app.js");
+var _getCategoryApiJs = require("./index-JS/service/getCategoryApi.js");
+var _createCetegoryListJs = require("./index-JS/createHtml/createCetegoryList.js");
+var _changeCtagoryJs = require("./index-JS/operation/changeCtagory.js");
+var _showMoreSupportJs = require("./index-JS/operation/showMoreSupport.js");
+var _getBookapiJs = require("./index-JS/service/getBookapi.js");
+var _createBookListJs = require("./index-JS/createHtml/createBookList.js");
 
-},{"./index-JS/app.js":"iuRpT"}],"iuRpT":[function(require,module,exports,__globalThis) {
+},{"./index-JS/app.js":"iuRpT","./index-JS/service/getCategoryApi.js":"5I8DQ","./index-JS/createHtml/createCetegoryList.js":"c6Xom","./index-JS/operation/changeCtagory.js":"l5bRC","./index-JS/operation/showMoreSupport.js":"9IVUQ","./index-JS/service/getBookapi.js":"hXANN","./index-JS/createHtml/createBookList.js":"g28R9"}],"iuRpT":[function(require,module,exports,__globalThis) {
+var _getCategoryApiJs = require("./service/getCategoryApi.js");
+var _createCetegoryListJs = require("./createHtml/createCetegoryList.js");
+getCategory();
+function getCategory() {
+    (0, _getCategoryApiJs.getCategoryApi)().then((data)=>{
+        (0, _createCetegoryListJs.createCetegoryList)(data);
+    });
+}
+
+},{"./service/getCategoryApi.js":"5I8DQ","./createHtml/createCetegoryList.js":"c6Xom"}],"5I8DQ":[function(require,module,exports,__globalThis) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "getCategoryApi", ()=>getCategoryApi);
+const getCategoryApi = async ()=>{
+    try {
+        const result = await fetch(`https://books-backend.p.goit.global/books/category-list`).then((data)=>{
+            return data.json();
+        });
+        return result;
+    } catch (error) {
+        return error;
+    }
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports,__globalThis) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, '__esModule', {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === 'default' || key === '__esModule' || Object.prototype.hasOwnProperty.call(dest, key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
+
+},{}],"c6Xom":[function(require,module,exports,__globalThis) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "createCetegoryList", ()=>createCetegoryList);
+const cetegoryList = document.querySelector(".category__list");
+function createCetegoryList(arr) {
+    let html = "";
+    html = arr.map((category)=>{
+        return `
+        <li class="category__item">
+            <span class="category__span">${category.list_name}</span>
+        </li>`;
+    }).join("");
+    cetegoryList.insertAdjacentHTML("beforeend", html);
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"l5bRC":[function(require,module,exports,__globalThis) {
+var _getBookapi = require("../service/getBookapi");
+var _createBookList = require("../createHtml/createBookList");
+const categoryList = document.querySelector(".category__list");
+const categoryTitle = document.querySelector(".shop_title");
+const booksList = document.querySelector(".magazine__book-list");
+categoryList.addEventListener("click", changeCategory);
+function changeCategory(event) {
+    const element = event.target;
+    if (element.classList.contains("active")) return;
+    else if (element.parentNode.classList.contains("category__item") === false) return;
+    else if (element.textContent === "All categories") {
+        const activeCategory = document.querySelector(".active");
+        activeCategory.classList.remove("active");
+        element.classList.add("active");
+        categoryTitle.innerHTML = "Best Sellers <span class='shop_title-purpure'>magazine</span>";
+        (0, _getBookapi.getBookApi)('https://books-backend.p.goit.global/books/top-books').then((data)=>{
+            (0, _createBookList.createBookList)(data, true);
+        });
+    } else {
+        const activeCategory = document.querySelector(".active");
+        activeCategory.classList.remove("active");
+        element.classList.add("active");
+        const text = element.textContent.split(" ");
+        categoryTitle.innerHTML = `${text.slice(0, -1).join(" ")} <span class="shop_title-purpure">${text.at(-1)}</span>`;
+        (0, _getBookapi.getBookApi)(`https://books-backend.p.goit.global/books/category?category=${element.textContent}`).then((data)=>{
+            (0, _createBookList.createBookList)(data);
+            console.log(data);
+        });
+    }
+}
+
+},{"../service/getBookapi":"hXANN","../createHtml/createBookList":"g28R9"}],"hXANN":[function(require,module,exports,__globalThis) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "getBookApi", ()=>getBookApi);
+const getBookApi = async (api)=>{
+    try {
+        const result = await fetch(`${api}`).then((data)=>{
+            return data.json();
+        });
+        return result;
+    } catch (error) {
+        return error;
+    }
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"g28R9":[function(require,module,exports,__globalThis) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "createBookList", ()=>createBookList);
+const booksList = document.querySelector(".magazine");
+function createBookList(arr, category = false) {
+    let html = "";
+    if (category === false) html = arr.map((obj)=>{
+        return `
+        <li class="magazine__item">
+            <img class="magazine__img" src="${obj.book_image}" alt="${obj.description}">
+            <h3 class="magazine__book-name">${obj.title}</h3>
+            <span class="magazine__book-author">${obj.author}</span>
+        </li>`;
+    }).join("");
+    else if (category === true) html = arr.map((obj)=>{
+        return `
+        <li class="magazine__item">
+            <h2 class="magazine__type-title">${obj.list_name}</h2>
+            <ul class="magazine__book-list">
+                <li class="magazine__item">
+                    <img class="magazine__img" src="${obj.books[0].book_image}" alt="1">
+                    <h3 class="magazine__book-name">${obj.books[0].title}</h3>
+                    <span class="magazine__book-author">${obj.books[0].author}</span>
+                </li>
+                <li class="magazine__item">
+                    <img class="magazine__img" src="${obj.books[1].book_image}" alt="1">
+                    <h3 class="magazine__book-name">${obj.books[1].title}</h3>
+                    <span class="magazine__book-author">${obj.books[1].author}</span>
+                </li>
+                <li class="magazine__item">
+                    <img class="magazine__img" src="${obj.books[2].book_image}" alt="1">
+                    <h3 class="magazine__book-name">${obj.books[2].title}</h3>
+                    <span class="magazine__book-author">${obj.books[2].author}</span>
+                </li>
+                <li class="magazine__item">
+                    <img class="magazine__img" src="${obj.books[3].book_image}" alt="1">
+                    <h3 class="magazine__book-name">${obj.books[3].title}</h3>
+                    <span class="magazine__book-author">${obj.books[3].author}</span>
+                </li>
+                <li class="magazine__item">
+                    <img class="magazine__img" src="${obj.books[4].book_image}" alt="1">
+                    <h3 class="magazine__book-name">${obj.books[4].title}</h3>
+                    <span class="magazine__book-author">${obj.books[4].author}</span>
+                </li>
+            </ul>
+            <button type="button" class="magazine__button">SEE MORE</button>
+        </li>`;
+    }).join("");
+    booksList.innerHTML = html;
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9IVUQ":[function(require,module,exports,__globalThis) {
+const fonds = document.querySelectorAll(".support__item");
+const showeButton = document.querySelector(".support__scroll-button");
+showeButton.addEventListener("click", showeMoreSupports);
+function showeMoreSupports() {
+    let count = 0;
+    fonds.forEach((element)=>{
+        if (count <= 2) element.classList.toggle("no-showe");
+        else if (count > 5) element.classList.toggle("no-showe");
+        count += 1;
+    });
+    if (fonds[0].classList.contains("no-showe")) showeButton.style.transform = "translate(-50%, 0%) rotate(0deg)";
+    else showeButton.style.transform = "translate(-50%, 0%) rotate(180deg)";
+}
 
 },{}]},["9mu7C","8lqZg"], "8lqZg", "parcelRequire94c2")
 

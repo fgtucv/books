@@ -80,12 +80,22 @@ button {
           box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.15);
 }
 
-.support__scroll-button:hover {
-  background-color: #4F2EE8;
+.category__span:hover {
+  color: #4F2EE8;
 }
 
-.support__scroll-icon:hover {
-  fill: #fff;
+.category__span:focus {
+  color: #4F2EE8;
+}
+
+.magazine__img:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.magazine__img:focus {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 .header {

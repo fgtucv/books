@@ -15,11 +15,15 @@
 
 .magazine {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    // display: block;
+    // flex-direction: column;
     gap: 40px;
 }
 
-.magazine__item {}
+.magazine__item {
+    // width: 180px;
+}
 
 .magazine__type-title {
     color: #B4AFAF;
@@ -33,6 +37,7 @@
 
 .magazine__book-list {
     display: flex;
+    // display: block;
     gap: 24px;
     margin-bottom: 32px;
 }
@@ -42,6 +47,7 @@
     height: 256px;
     border-radius: 8px;
     margin-bottom: 14px;
+    transition: transform 500ms linear 250ms;
 }
 
 .magazine__book-name {
@@ -52,6 +58,7 @@
     letter-spacing: -0.64px;
     text-transform: uppercase;
     margin-bottom: 4px;
+    max-width: 180px;
 }
 
 .magazine__book-author {
@@ -61,6 +68,7 @@
     font-weight: 400;
     line-height: 14px;
     letter-spacing: -0.48px;
+    max-width: 180px;
 }
 
 .magazine__button {

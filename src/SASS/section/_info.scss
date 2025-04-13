@@ -27,6 +27,7 @@
     line-height: 24px;
     letter-spacing: -0.36px;
     color: #11111199;
+    transition: color 500ms linear 250ms;
 }
 
 .active {
@@ -82,7 +83,7 @@
     align-items: center;
 }
 
-.hidden {
+.no-showe {
     display: none;
 }
 
@@ -98,8 +99,9 @@
 .support__link {}
 
 .support__img {
-    height: 32px;
     flex-shrink: 0;
+    max-width: 130px;
+    max-height: 32px;
 }
 
 .support__scroll-button {
@@ -113,7 +115,7 @@
     bottom: 24px;
     left: 50%;
     transform: translate(-50%, 0%) rotate(180deg);
-    transition: background-color 500ms linear 250ms;
+    transition: background-color 500ms linear 250ms, transform 300ms linear;
 }
 
 .support__scroll-icon {
