@@ -1,6 +1,33 @@
 body {
+  background-color: #f6f6f6;
+  padding-bottom: 72px;
   font-family: DM Sans;
   font-style: normal;
+}
+
+.main .container {
+  padding-top: 40px;
+  display: flex;
+}
+
+.container {
+  justify-content: center;
+  width: 1392px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+}
+
+@media screen and (width <= 1439px) {
+  .container {
+    width: 704px;
+  }
+}
+
+@media screen and (width <= 767px) {
+  .container {
+    width: 335px;
+  }
 }
 
 ul {
@@ -35,5 +62,116 @@ input {
 
 button {
   outline: none;
+}
+
+.magazine__button:hover {
+  color: #fff;
+  background-color: #4f2ee8;
+}
+
+.magazine__button:focus {
+  color: #fff;
+  background-color: #4f2ee8;
+  box-shadow: 0 4px 18px #00000026;
+}
+
+.category__span:hover, .category__span:focus {
+  color: #4f2ee8;
+}
+
+.magazine__img:hover, .magazine__img:focus {
+  transform: scale(1.05);
+}
+
+.header {
+  background-color: #fff;
+  border: 2px solid #111;
+  border-radius: 0 0 8px 8px;
+  flex-shrink: 0;
+}
+
+.header .container {
+  align-items: center;
+  height: 72px;
+  display: flex;
+}
+
+.header__logo {
+  width: 109px;
+  height: 28px;
+  margin-right: auto;
+}
+
+.header__switch {
+  width: 40px;
+  height: 20px;
+  display: inline-block;
+  position: relative;
+}
+
+.header__switch-input {
+  display: none;
+}
+
+.header__switch-input:checked + .header__slider:before {
+  background-color: #f7f7f7;
+  transform: translateX(19.5px);
+}
+
+.header__switch-input:checked + .header__slider {
+  background: linear-gradient(#4f2ee8 0%, #686868 100%);
+  box-shadow: inset 1px 1px 2px #0000001a;
+}
+
+.header__slider {
+  cursor: pointer;
+  background: linear-gradient(#4f2ee8 0%, #dcdcdc 100%);
+  flex-shrink: 0;
+  transition: all .4s;
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 1px 1px 2px #0000001a;
+}
+
+.header__slider:before {
+  content: "";
+  background-color: #fff;
+  background-position: center;
+  background-size: cover;
+  width: 18px;
+  height: 18px;
+  transition: all .4s;
+  position: absolute;
+  bottom: 1px;
+  left: 1px;
+}
+
+.header__round {
+  border-radius: 34px;
+}
+
+.header__round:before {
+  border-radius: 50%;
+}
+
+.header__button {
+  color: #fff;
+  background: #4f2ee8;
+  border: 2px solid #111;
+  border-radius: 18px;
+  flex-shrink: 0;
+  justify-content: space-between;
+  align-items: center;
+  width: 184px;
+  height: 48px;
+  margin-left: 24px;
+  padding: 0 14px;
+  display: flex;
+}
+
+.header__arrow-icon {
+  stroke: #eac645;
+  width: 13px;
+  height: 10px;
 }
 /*# sourceMappingURL=basket.3406bad5.css.map */
