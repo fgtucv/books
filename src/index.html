@@ -25,7 +25,17 @@
                 <input class="header__switch-input" type="checkbox">
                 <span class="header__slider header__round"></span>
             </label>
-            <button class="header__button" type="button">
+            <button type="button" class="header__menu-button">
+                <svg class="header__menu-icon">
+                    <use href="./icon/symbol-defs.svg#icon-menu"></use>
+                </svg>
+            </button>
+            <button type="button" class="phone__close-button">
+                <svg class="phone__close-icon">
+                    <use href="./icon/symbol-defs.svg#icon-close"></use>
+                </svg>
+            </button>
+            <button class="header__open-button" type="button" id="loginingModal">
                 Sign up
                 <svg class="header__arrow-icon">
                     <use href="./icon/symbol-defs.svg#icon-arrow-right"></use>
@@ -122,119 +132,51 @@
             </section>
             <section class="shop">
                 <h1 class="shop_title">
-                    Best Sellers <span class="shop_title-purpure">magazine</span> 
+                    Best Sellers <span class="shop_title-purpure">magazine</span>
                 </h1>
                 <ul class="magazine">
-                    <li class="magazine__item">
-                        <h2 class="magazine__type-title">COMBINED  PRINT AND E-BOOK FICTION</h2>
-                        <ul class="magazine__book-list">
-                            <li class="magazine__item">
-                                <img class="magazine__img" src="https://ukr.granite.ua/wp-content/uploads/2023/09/CHornyj-marmur-slyab-foto.webp" alt="1">
-                                <h3 class="magazine__book-name">book name</h3>
-                                <span class="magazine__book-author">author name</span>
-                            </li>
-                            <li class="magazine__item">
-                                <img class="magazine__img" src="https://ukr.granite.ua/wp-content/uploads/2023/09/CHornyj-marmur-slyab-foto.webp" alt="2">
-                                <h3 class="magazine__book-name">book name</h3>
-                                <span class="magazine__book-author">author name</span>
-                            </li>
-                            <li class="magazine__item">
-                                <img class="magazine__img" src="https://ukr.granite.ua/wp-content/uploads/2023/09/CHornyj-marmur-slyab-foto.webp" alt="3">
-                                <h3 class="magazine__book-name">book name</h3>
-                                <span class="magazine__book-author">author name</span>
-                            </li>
-                            <li class="magazine__item">
-                                <img class="magazine__img" src="https://ukr.granite.ua/wp-content/uploads/2023/09/CHornyj-marmur-slyab-foto.webp" alt="4">
-                                <h3 class="magazine__book-name">book name</h3>
-                                <span class="magazine__book-author">author name</span>
-                            </li>
-                        </ul>
-                        <button type="button" class="magazine__button">SEE MORE</button>
-                    </li>
-                    <li class="magazine__item">
-                        <h2 class="magazine__type-title">COMBINED PRINT & E-BOOK NONFICTION</h2>
-                        <ul class="magazine__book-list">
-                            <li class="magazine__item">
-                                <img class="magazine__img" src="https://ukr.granite.ua/wp-content/uploads/2023/09/CHornyj-marmur-slyab-foto.webp" alt="1">
-                                <h3 class="magazine__book-name">book name</h3>
-                                <span class="magazine__book-author">author name</span>
-                            </li>
-                            <li class="magazine__item">
-                                <img class="magazine__img" src="https://ukr.granite.ua/wp-content/uploads/2023/09/CHornyj-marmur-slyab-foto.webp" alt="2">
-                                <h3 class="magazine__book-name">book name</h3>
-                                <span class="magazine__book-author">author name</span>
-                            </li>
-                            <li class="magazine__item">
-                                <img class="magazine__img" src="https://ukr.granite.ua/wp-content/uploads/2023/09/CHornyj-marmur-slyab-foto.webp" alt="3">
-                                <h3 class="magazine__book-name">book name</h3>
-                                <span class="magazine__book-author">author name</span>
-                            </li>
-                            <li class="magazine__item">
-                                <img class="magazine__img" src="https://ukr.granite.ua/wp-content/uploads/2023/09/CHornyj-marmur-slyab-foto.webp" alt="4">
-                                <h3 class="magazine__book-name">book name</h3>
-                                <span class="magazine__book-author">author name</span>
-                            </li>
-                        </ul>
-                        <button type="button" class="magazine__button">SEE MORE</button>
-                    </li>
-                    <li class="magazine__item">
-                        <h2 class="magazine__type-title">HARDCOVER FICTION</h2>
-                        <ul class="magazine__book-list">
-                            <li class="magazine__item">
-                                <img class="magazine__img" src="https://ukr.granite.ua/wp-content/uploads/2023/09/CHornyj-marmur-slyab-foto.webp" alt="1">
-                                <h3 class="magazine__book-name">book name</h3>
-                                <span class="magazine__book-author">author name</span>
-                            </li>
-                            <li class="magazine__item">
-                                <img class="magazine__img" src="https://ukr.granite.ua/wp-content/uploads/2023/09/CHornyj-marmur-slyab-foto.webp" alt="2">
-                                <h3 class="magazine__book-name">book name</h3>
-                                <span class="magazine__book-author">author name</span>
-                            </li>
-                            <li class="magazine__item">
-                                <img class="magazine__img" src="https://ukr.granite.ua/wp-content/uploads/2023/09/CHornyj-marmur-slyab-foto.webp" alt="3">
-                                <h3 class="magazine__book-name">book name</h3>
-                                <span class="magazine__book-author">author name</span>
-                            </li>
-                            <li class="magazine__item">
-                                <img class="magazine__img" src="https://ukr.granite.ua/wp-content/uploads/2023/09/CHornyj-marmur-slyab-foto.webp" alt="4">
-                                <h3 class="magazine__book-name">book name</h3>
-                                <span class="magazine__book-author">author name</span>
-                            </li>
-                        </ul>
-                        <button type="button" class="magazine__button">SEE MORE</button>
-                    </li>
-                    <li class="magazine__item">
-                        <h2 class="magazine__type-title">HARDCOVER NONFICTION</h2>
-                        <ul class="magazine__book-list">
-                            <li class="magazine__item">
-                                <img class="magazine__img" src="https://ukr.granite.ua/wp-content/uploads/2023/09/CHornyj-marmur-slyab-foto.webp" alt="1">
-                                <h3 class="magazine__book-name">book name</h3>
-                                <span class="magazine__book-author">author name</span>
-                            </li>
-                            <li class="magazine__item">
-                                <img class="magazine__img" src="https://ukr.granite.ua/wp-content/uploads/2023/09/CHornyj-marmur-slyab-foto.webp" alt="2">
-                                <h3 class="magazine__book-name">book name</h3>
-                                <span class="magazine__book-author">author name</span>
-                            </li>
-                            <li class="magazine__item">
-                                <img class="magazine__img" src="https://ukr.granite.ua/wp-content/uploads/2023/09/CHornyj-marmur-slyab-foto.webp" alt="3">
-                                <h3 class="magazine__book-name">book name</h3>
-                                <span class="magazine__book-author">author name</span>
-                            </li>
-                            <li class="magazine__item">
-                                <img class="magazine__img" src="https://ukr.granite.ua/wp-content/uploads/2023/09/CHornyj-marmur-slyab-foto.webp" alt="4">
-                                <h3 class="magazine__book-name">book name</h3>
-                                <span class="magazine__book-author">author name</span>
-                            </li>
-                        </ul>
-                        <button type="button" class="magazine__button">SEE MORE</button>
-                    </li>
                 </ul>
             </section>
         </div>
     </main>
 
     <!-- modals -->
+
+    <div class="login-modal-bacdrop is-hidden">
+        <div class="login-modal">
+            <button class="login-modal__close-button" type="button">
+                <svg class="login-modal__close-icon">
+                    <use href="./icon/symbol-defs.svg#icon-close"></use>
+                </svg>
+            </button>
+            <form class="login-modal__form" action>
+                <input class="login-modal__input" id="name" type="text" placeholder="nAME">
+                <input class="login-modal__input" id="email" type="email" placeholder="eMAIL">
+                <svg class="login-modal__email-icon">
+                    <use href="./icon/symbol-defs.svg#icon-Icon"></use>
+                </svg>
+                <input class="login-modal__input" id="password" type="password" placeholder="pASSWORD">
+                <svg class="login-modal__password-icon">
+                    <use href="./icon/symbol-defs.svg#icon-lock"></use>
+                </svg>
+                <button class="login-modal__submit-button" type="submit">Sign up</button>
+            </form>
+            <div class="login-modal__change-type">
+                <span class="login-modal__type-button active-modal" id="sing up">sign up</span>
+                <span class="login-modal__type-button" id="sing in">sIGN In</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="phone-bacdrop is-hidden">
+        <button class="phone__open-button" type="button">
+            Sign up
+            <svg class="phone__arrow-icon">
+                <use href="./icon/symbol-defs.svg#icon-arrow-right"></use>
+            </svg>
+        </button>
+        <!-- <img class="phone__modal-background" src="./imeges/background.png" alt="background"> -->
+    </div>
 
     <!-- scrip -->
     <script src="./index.js" type="module"></script>

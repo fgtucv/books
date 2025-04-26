@@ -12,5 +12,8 @@
   "dependencies": {
     "gh-pages": "^6.3.0",
     "parcel": "^2.13.3"
+  },
+  "devDependencies": {
+    "svgo": "^3.3.2"
   }
 }

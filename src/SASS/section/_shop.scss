@@ -7,6 +7,11 @@
     letter-spacing: -1.92px;
     color: #111;
     margin-bottom: 40px;
+
+    @media screen and (max-width: 768px) {
+        font-size: 32px;
+        font-weight: 700;
+    }
 }
 
 .shop_title-purpure {
@@ -16,13 +21,7 @@
 .magazine {
     display: flex;
     flex-wrap: wrap;
-    // display: block;
-    // flex-direction: column;
-    gap: 40px;
-}
-
-.magazine__item {
-    // width: 180px;
+    gap: 24px;
 }
 
 .magazine__type-title {
@@ -37,9 +36,18 @@
 
 .magazine__book-list {
     display: flex;
-    // display: block;
     gap: 24px;
     margin-bottom: 32px;
+
+    @media screen and (max-width: 768px) {
+        display: block;
+    }
+}
+
+.magazine__book-list .magazine__item:not(:first-child) {
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
 }
 
 .magazine__img {
@@ -48,6 +56,11 @@
     border-radius: 8px;
     margin-bottom: 14px;
     transition: transform 500ms linear 250ms;
+
+    @media screen and (max-width: 768px) {
+        width: 335px;
+        height: 485px;
+    }
 }
 
 .magazine__book-name {
@@ -59,6 +72,12 @@
     text-transform: uppercase;
     margin-bottom: 4px;
     max-width: 180px;
+
+    @media screen and (max-width: 768px) {
+        font-size: 16px;
+        font-weight: 700;
+        max-width: 335px;
+    }
 }
 
 .magazine__book-author {
@@ -69,6 +88,11 @@
     line-height: 14px;
     letter-spacing: -0.48px;
     max-width: 180px;
+
+    @media screen and (max-width: 768px) {
+        font-size: 12px;
+        font-weight: 400;
+    }
 }
 
 .magazine__button {

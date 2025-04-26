@@ -1,0 +1,56 @@
+.phone-bacdrop {
+    background: radial-gradient(189.32% 190.93% at 59.76% -23.42%, #4F2EE8 18.03%, #FFF 100%);
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding-top: 104px;
+    padding-left: 20px;
+    z-index: 999;
+}
+
+.phone__close-button {
+        border: none;
+        background: none;
+        display: none; 
+        width: 28px;
+        height: 28px;
+}
+
+.phone__close-icon {
+        width: 28px;
+        height: 28px;
+        stroke: #111111;
+        transform: translate(0%, 18%);
+}
+
+.phone__open-button {
+    flex-shrink: 0;
+    border-radius: 18px;
+    border: 2px solid #111;
+    background: #4F2EE8;
+    color: #FFFFFF;
+    display: flex;
+    width: 184px;
+    height: 48px;
+    align-items: center;
+    padding: 0px 14px;
+    justify-content: space-between;
+}
+
+.phone__arrow-icon {
+    width: 13px;
+    height: 10px;
+    stroke: #EAC645;
+}
+
+// .phone__modal-background {
+//     transform: rotate(-15deg);
+//     position: absolute;
+//     right: -50%;
+//     bottom: -120;
+//     top: 379;
+//     width: 450px;
+//     height: 439px;
+// }

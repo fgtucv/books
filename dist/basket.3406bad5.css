@@ -1,13 +1,39 @@
 body {
   background-color: #f6f6f6;
+  padding-top: 72px;
   padding-bottom: 72px;
   font-family: DM Sans;
   font-style: normal;
 }
 
+@media screen and (width <= 768px) {
+  body {
+    padding-top: 64px;
+  }
+}
+
+button {
+  cursor: pointer;
+}
+
+span, h1, h2, h3 {
+  cursor: default;
+}
+
+.is-hidden {
+  pointer-events: none;
+  display: none;
+}
+
 .main .container {
   padding-top: 40px;
   display: flex;
+}
+
+@media screen and (width <= 768px) {
+  .main .container {
+    display: block;
+  }
 }
 
 .container {
@@ -18,13 +44,13 @@ body {
   padding: 0;
 }
 
-@media screen and (width <= 1439px) {
+@media screen and (width <= 1440px) {
   .container {
     width: 704px;
   }
 }
 
-@media screen and (width <= 767px) {
+@media screen and (width <= 768px) {
   .container {
     width: 335px;
   }
@@ -83,11 +109,20 @@ button {
   transform: scale(1.05);
 }
 
+.login-modal__type-button:hover {
+  color: #4f2ee8;
+}
+
 .header {
+  z-index: 1000;
   background-color: #fff;
   border: 2px solid #111;
   border-radius: 0 0 8px 8px;
   flex-shrink: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 .header .container {
@@ -96,17 +131,68 @@ button {
   display: flex;
 }
 
+@media screen and (width <= 768px) {
+  .header .container {
+    height: 64px;
+  }
+}
+
 .header__logo {
   width: 109px;
   height: 28px;
-  margin-right: auto;
+  margin-right: 76px;
+}
+
+.header__nav-list {
+  align-items: center;
+  gap: 24px;
+  height: 34px;
+  display: inline-flex;
+}
+
+.header__nav-item {
+  align-items: center;
+  display: flex;
+}
+
+.active-nav-item {
+  background: #eac645;
+  border-radius: 36px;
+  padding: 8px 16px;
+}
+
+.header__nav-link {
+  text-transform: uppercase;
+  text-align: center;
+  color: #111;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.active-nav-link {
+  font-weight: 700;
+}
+
+.header__nav-icon {
+  stroke: #111;
+  fill: #111;
+  width: 20px;
+  height: 20px;
 }
 
 .header__switch {
   width: 40px;
   height: 20px;
+  margin-left: auto;
+  margin-right: 24px;
   display: inline-block;
   position: relative;
+}
+
+@media screen and (width <= 768px) {
+  .header__switch {
+    margin-right: 14px;
+  }
 }
 
 .header__switch-input {
@@ -154,7 +240,89 @@ button {
   border-radius: 50%;
 }
 
-.header__button {
+.header__account-div {
+  background-color: #4f2ee8;
+  border-radius: 36px;
+  align-items: center;
+  width: 184px;
+  height: 45px;
+  padding-left: 12px;
+  padding-right: 12px;
+  display: flex;
+}
+
+.header__account-avatar-div {
+  background-color: #f6f6f6;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  width: 37px;
+  height: 37px;
+  display: flex;
+}
+
+.header__account-avatar {
+  fill: #4f2ee8;
+  flex-shrink: 0;
+  width: 19px;
+  height: 19px;
+}
+
+.header__account-name {
+  letter-spacing: -.44px;
+  color: #fff;
+  margin-left: 9px;
+  margin-right: 4px;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.header__account-button {
+  fill: #fff;
+  background: none;
+  border: none;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  display: flex;
+}
+
+.header__account-icon {
+  flex-shrink: 0;
+  width: 23px;
+  height: 26px;
+}
+
+.header__menu-button {
+  display: none;
+}
+
+@media screen and (width <= 768px) {
+  .header__menu-button {
+    background: none;
+    border: none;
+    width: 28px;
+    height: 28px;
+    display: block;
+  }
+}
+
+.header__menu-icon {
+  display: none;
+}
+
+@media screen and (width <= 768px) {
+  .header__menu-icon {
+    stroke: #111;
+    width: 28px;
+    height: 28px;
+    display: block;
+    transform: translate(0%, 18%);
+  }
+}
+
+.header__open-button {
   color: #fff;
   background: #4f2ee8;
   border: 2px solid #111;
@@ -164,14 +332,42 @@ button {
   align-items: center;
   width: 184px;
   height: 48px;
-  margin-left: 24px;
   padding: 0 14px;
   display: flex;
+}
+
+@media screen and (width <= 768px) {
+  .header__open-button {
+    display: none;
+  }
 }
 
 .header__arrow-icon {
   stroke: #eac645;
   width: 13px;
   height: 10px;
+}
+
+.header__exit-button {
+  color: #111;
+  letter-spacing: -.56px;
+  background-color: #fff;
+  border: 1.5px solid #111;
+  border-radius: 18px;
+  align-items: center;
+  padding: 14px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  display: flex;
+  position: absolute;
+  top: 58px;
+  right: 4%;
+}
+
+.header__exit-icon {
+  width: 20px;
+  height: 20px;
+  margin-left: 90px;
 }
 /*# sourceMappingURL=basket.3406bad5.css.map */
